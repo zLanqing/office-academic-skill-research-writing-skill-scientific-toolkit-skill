@@ -154,37 +154,43 @@
 
 三个 skill 采用相同的目录结构和 SKILL.md 格式，在 Claude Code 和 Codex 中均可直接加载。
 
+先克隆仓库并进入仓库根目录：
+
+```bash
+git clone https://github.com/zLanqing/codex-claude-academic-skills.git
+cd codex-claude-academic-skills
+```
+
 ### Claude Code
 
 ```bash
-# 克隆仓库
-git clone https://github.com/你的用户名/claude-academic-skills.git
-
 # 安装到全局 skills 目录
-cp -r claude-academic-skills/research-writing-skill ~/.claude/skills/
-cp -r claude-academic-skills/office-academic-skill ~/.claude/skills/
-cp -r claude-academic-skills/scientific-toolkit-skill ~/.claude/skills/
+mkdir -p ~/.claude/skills
+cp -r research-writing-skill ~/.claude/skills/
+cp -r office-academic-skill ~/.claude/skills/
+cp -r scientific-toolkit-skill ~/.claude/skills/
 ```
 
 也可通过 Plugin 方式一键安装：
 
 ```bash
-/plugin install 你的用户名/claude-academic-skills
+/plugin install zLanqing/codex-claude-academic-skills
 ```
 
 ### Codex
 
 ```bash
 # 安装到全局 skills 目录
-cp -r claude-academic-skills/research-writing-skill ~/.codex/skills/
-cp -r claude-academic-skills/office-academic-skill ~/.codex/skills/
-cp -r claude-academic-skills/scientific-toolkit-skill ~/.codex/skills/
+mkdir -p ~/.codex/skills
+cp -r research-writing-skill ~/.codex/skills/
+cp -r office-academic-skill ~/.codex/skills/
+cp -r scientific-toolkit-skill ~/.codex/skills/
 ```
 
 也可通过 `--plugin-url` 参数在当前会话中直接加载：
 
 ```bash
-codex --plugin-url https://github.com/你的用户名/claude-academic-skills
+codex --plugin-url https://github.com/zLanqing/codex-claude-academic-skills
 ```
 
 > 如需**项目级安装**，将 skill 目录放入项目根目录下的 `.claude/skills/` 或 `.codex/skills/` 即可，仅对该项目生效。
